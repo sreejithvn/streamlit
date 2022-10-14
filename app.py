@@ -154,16 +154,67 @@ if cola:
 
 
 
+# DAY 14 - Steamlit Components
+
+# import pandas_profiling
+# from streamlit_pandas_profiling import st_profile_report
+
+
+# st.header('`streamlit_pandas_profiling`')
+
+# df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/penguins_cleaned.csv')
+
+# pr = df.profile_report()
+# st_profile_report(pr)
+
+
+
+# DAY 15 - Latex
+
+
+st.header('st.latex')
+
+st.latex(r'''
+     a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =
+     \sum_{k=0}^{n-1} ar^k =
+     a \left(\frac{1-r^{n}}{1-r}\right)
+     ''')
 
 
 
 
+# Day 16 - Customizing the theme of Streamlit apps
+
+
+st.title('Customizing the theme of Streamlit apps')
+
+st.write('Contents of the `.streamlit/config.toml` file of this app')
+
+st.code("""
+[theme]
+primaryColor="#F39C12"
+backgroundColor="#2E86C1"
+secondaryBackgroundColor="#AED6F1"
+textColor="#FFFFFF"
+font="monospace"
+""")
+
+
+# SIDEBAR SLIDER 
+
+number = st.sidebar.slider('Select a number:', 0, 10, 5)
+st.write('Selected number from slider widget is:', number)
 
 
 
+# DAY 17 - st.secrets
+
+# st.secrets allows you to store confidential information such as API keys, database passwords or other credentials.
 
 
+st.title('st.secrets')
 
+st.write(st.secrets['message'])
 
 
 
